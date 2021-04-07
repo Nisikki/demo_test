@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
  * @Describe:
  */
 abstract class BaseActivity : AppCompatActivity() {
+    public val TAG = javaClass.simpleName;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(setLayout())
@@ -24,6 +25,8 @@ abstract class BaseActivity : AppCompatActivity() {
     fun <T : View> findView(id: Int): T {
         return findViewById(id)
     }
+
+
 
 
 }

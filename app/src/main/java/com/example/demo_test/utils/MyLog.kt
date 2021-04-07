@@ -9,8 +9,19 @@ import android.util.Log
  */
 object MyLog {
     const val TAG = "TestDemo"
+
     @JvmStatic
     fun e(message: String) {
         Log.e(TAG, message)
     }
+    @JvmStatic
+    fun d(tag:String,message: String) {
+        Log.e(tag, message)
+    }
+
+
+}
+
+fun String.mLogd(msg: String) {
+    mLog.d(this, msg)
 }

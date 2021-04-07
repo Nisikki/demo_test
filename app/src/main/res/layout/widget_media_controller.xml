@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="4dp"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/prev"
+            style="@style/ExoMediaButton.Previous"
+            android:contentDescription="@string/exo_controls_previous_description" />
+
+        <ImageButton
+            android:id="@+id/rew"
+            style="@style/ExoMediaButton.Rewind"
+            android:contentDescription="@string/exo_controls_rewind_description" />
+
+        <!--<ImageButton-->
+        <!--android:id="@+id/play"-->
+        <!--style="@style/ExoMediaButton" />-->
+
+        <ImageButton
+            android:id="@+id/ffwd"
+            style="@style/ExoMediaButton.FastForward"
+            android:contentDescription="@string/exo_controls_fastforward_description" />
+
+        <ImageButton
+            android:id="@+id/next"
+            style="@style/ExoMediaButton.Next"
+            android:contentDescription="@string/exo_controls_previous_description" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:background="#00000000"
+                android:contentDescription="@string/mediacontroller_play_pause"
+            android:src="@drawable/mediacontroller_pause_button" />
+
+        <SeekBar
+            android:id="@+id/mediacontroller_progress"
+            style="@style/MediaController_SeekBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:focusable="true" />
+
+        <TextView
+            android:id="@+id/time_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="4dp"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:text="00:18"
+            android:textColor="#33C0BE"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingEnd="4dp"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:text="00:18"
+            android:textColor="#FFFFFF"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/player_screen_full"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/zhibo_screen_full"
+            android:visibility="visible" />
+    </LinearLayout>
+
+</LinearLayout>
+

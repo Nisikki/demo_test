@@ -1,6 +1,7 @@
 package com.example.demo_test.reflect
 
 import com.example.demo_test.utils.MyLog
+import com.example.demo_test.utils.mLog
 
 /**
  * @Author: Nisikki
@@ -9,10 +10,10 @@ import com.example.demo_test.utils.MyLog
  */
 data class TestEntity constructor(private val a: Int, private var b: String) {
     init {
-        MyLog.e("$b $a")
+        mLog.e("$b $a")
     }
 
     private fun test1(c :String){
-        MyLog.e("测试获取私有方法")
+        mLog.e("测试获取私有方法")
     }
 }

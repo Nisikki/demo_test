@@ -5,3 +5,4 @@ package com.example.demo_test.utils
  * @Date: 2021/3/8
  * @Describe:
  */
+typealias mLog = MyLog

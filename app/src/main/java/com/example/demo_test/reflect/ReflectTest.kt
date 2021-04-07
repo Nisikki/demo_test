@@ -1,6 +1,6 @@
 package com.example.demo_test.reflect
 
-import com.example.demo_test.utils.MyLog
+import com.example.demo_test.utils.mLog
 import java.lang.reflect.Modifier
 import com.example.demo_test.reflect.TestEntity as TestEntity1
 
@@ -28,7 +28,7 @@ object ReflectTest {
             cla.forEach {
                 sp.append(it.name).append(",")
             }
-            MyLog.e(sp.toString())
+            mLog.e(sp.toString())
         }
     }
 
@@ -47,8 +47,8 @@ object ReflectTest {
 
         val field = getTestEntityClass().getDeclaredField("b")
         field.isAccessible = true
-        MyLog.e(field.name)
+        mLog.e(field.name)
         field.set(cla,"EMmmmm");
-        MyLog.e(field.get(cla) as String)
+        mLog.e(field.get(cla) as String)
     }
 }

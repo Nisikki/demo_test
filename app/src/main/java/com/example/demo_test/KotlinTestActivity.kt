@@ -24,6 +24,9 @@ class KotlinTestActivity : BaseActivity() {
     private lateinit var job: Job
 
 
+    private val test :String = ""
+
+
     override fun setLayout() = R.layout.activity_test
 
     override fun init() {

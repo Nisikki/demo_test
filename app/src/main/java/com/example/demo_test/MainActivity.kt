@@ -14,6 +14,8 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.annotation.RequiresApi
 import com.example.demo_test.dir.DirActivity
+import com.example.demo_test.image.ImageActivity
+import com.example.demo_test.keep_allive.ReceiveMsgService
 import com.example.demo_test.skip.AActivity
 import com.example.demo_test.utils.toActivity
 import com.example.demo_test.video.VideoPlayActivity
@@ -33,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         "Route" to RouteACtivity::class.java,
         "KotlinTest" to KotlinTestActivity::class.java,
         "VideoPlay" to VideoPlayActivity::class.java,
-        "AActivity" to AActivity::class.java
+        "AActivity" to AActivity::class.java,
+        "ImageActivity" to ImageActivity::class.java
     )
 
 
@@ -58,8 +61,8 @@ class MainActivity : AppCompatActivity() {
             button.layoutParams = layoutParams
             findViewById<LinearLayout>(R.id.linearLayout).addView(button)
             button.setOnClickListener { it1 ->
-//                startActivity(Intent(this@MainActivity, it.value))
-                toActivity(Intent(this, TransferTransparencyActivity::class.java))
+                startActivity(Intent(this@MainActivity, it.value))
+//                toActivity(Intent(this, TransferTransparencyActivity::class.java))
             }
         }
 

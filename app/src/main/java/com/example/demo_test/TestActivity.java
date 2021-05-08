@@ -35,7 +35,7 @@ public class TestActivity extends BaseActivity {
 
     @Override
     public void init() {
-        tvTitle = findView(R.id.tv_title);
+//        tvTitle = findView(R.id.tv_title);
         test();
     }
 

@@ -24,8 +24,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+<!--    android:requestLegacyExternalStorage="true"-->
+
     <application
-        android:requestLegacyExternalStorage="true"
         android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,6 +34,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,6 +42,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <!-- 7.0 及其以上使用FileProvide 需配置-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+
+
         <activity android:name=".dir.DirActivity" />
         <activity android:name=".TestActivity" />
         <activity android:name=".RouteACtivity" />
@@ -55,6 +73,9 @@
             android:theme="@style/TransparentStyle"/>
         <activity android:name=".image.ImageActivity" />
         <activity android:name=".image.ImageViewActivity" />
+
+
+
     </application>
 
 </manifest>

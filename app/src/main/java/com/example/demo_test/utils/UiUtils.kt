@@ -13,16 +13,13 @@ import com.example.demo_test.MyApplication
 object UiUtils {
 
     @JvmStatic
-    fun getScreenWidth(context: Context): Int {
-        val wm = context
+    fun getScreenWidth(): Int {
+        val wm = MyApplication.context
             .getSystemService(Context.WINDOW_SERVICE) as WindowManager
         val dm = DisplayMetrics()
         wm.defaultDisplay.getMetrics(dm)
         return dm.widthPixels
     }
 
-    fun getScreenWidth(): Int {
-        return getScreenWidth(MyApplication.context)
-    }
 
 }

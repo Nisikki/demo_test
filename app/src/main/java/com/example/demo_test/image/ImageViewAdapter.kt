@@ -16,6 +16,10 @@ class ImageViewAdapter (val listener: CommonClickListener):BaseRvAdapter<ImageBe
     override fun convert(holder: BaseViewHolder, item: ImageBean) {
         super.convert(holder, item)
         Glide.with(context).load(item.url).fitCenter().into(holder.getView(R.id.iv_image))
+//        val imageView = holder.getView<ZoomImageView>(R.id.iv_image)
+//        imageView.reset()
+//        imageView.urlToBitmap(item.url)
+
         holder.itemView.setOnClickListener { listener.onClick() }
     }
 }

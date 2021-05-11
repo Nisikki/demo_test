@@ -1,5 +1,6 @@
 package com.example.demo_test.utils
 
+import android.content.Context
 import android.util.Log
 import com.example.demo_test.utils.MyLog.isShow
 
@@ -11,7 +12,8 @@ import com.example.demo_test.utils.MyLog.isShow
 object MyLog {
     const val TAG = "TestDemo"
 
-    const val isShow = false;
+    const val isShow = true         //控制是否显示LOg
+
     @JvmStatic
     fun e(message: String) {
         Log.e(TAG, message)
@@ -32,10 +34,11 @@ object MyLog {
 }
 
 
-fun String.mLogd(msg: String) {
-    mLog.d(this, msg)
+fun Any.mLogd(msg: String) {
+    mLog.d(javaClass.simpleName, msg)
 }
 
-fun String.mLogd2(msg: String) {
-    mLog.d(this, msg,isShow)
+fun Any.mLogd2(msg: String) {
+    mLog.d(javaClass.simpleName, msg, isShow)
 }
+

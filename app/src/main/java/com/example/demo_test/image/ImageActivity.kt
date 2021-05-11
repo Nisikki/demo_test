@@ -102,7 +102,7 @@ class ImageActivity : BaseVbActivity<ActImageBinding>(), CommonClickListener {
 
     override fun onClick(vararg key: Any) {
         val index = key[0] as Int
-        TAG.mLogd("当前索引：$index")
+        mLogd("当前索引：$index")
        val pair =  Pair<ArrayList<ImageBean>,Int>(imageAdapter.data as ArrayList<ImageBean>, index)
         toActivity(ImageViewActivity.getStartIntent(this))
         eventBus.postSticky(EventMessageBean(EventConstant.EVENT_IMAGE_DATA,pair))

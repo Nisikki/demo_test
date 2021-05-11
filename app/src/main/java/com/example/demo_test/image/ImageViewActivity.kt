@@ -28,6 +28,12 @@ class ImageViewActivity : BaseVbActivity<ActImageViewBinding>(), CommonClickList
         binding.viewPager.run {
             imageViewAdapter = ImageViewAdapter(this@ImageViewActivity)
             adapter = imageViewAdapter
+            registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    super.onPageSelected(position)
+
+                }
+            })
         }
 
 
@@ -42,7 +48,7 @@ class ImageViewActivity : BaseVbActivity<ActImageViewBinding>(), CommonClickList
             val pair = event.data as Pair<*, *>
             data = pair.first as ArrayList<ImageBean>
             index = pair.second as Int
-            TAG.mLogd("当前索引：$index")
+            mLogd("当前索引：$index")
 
             imageViewAdapter.setNewData(data)
             binding.viewPager.setCurrentItem(index, false)
@@ -57,7 +63,7 @@ class ImageViewActivity : BaseVbActivity<ActImageViewBinding>(), CommonClickList
     }
 
     override fun onClick(vararg key: Any) {
-        finish()
+//        finish()
 
     }
 }

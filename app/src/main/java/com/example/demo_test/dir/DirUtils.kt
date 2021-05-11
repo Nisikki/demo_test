@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat.getExternalFilesDirs
 import com.example.demo_test.MyApplication
 import com.example.demo_test.MyApplication.Companion.context
 import com.example.demo_test.utils.mLog
+import com.example.demo_test.utils.mLogd
 import java.io.File
 
 
@@ -101,18 +102,18 @@ class DirUtils {
         @JvmStatic
         @RequiresApi(Build.VERSION_CODES.N)
         fun logAllDir() {
-            mLog.e(text1)
-            mLog.e(text2)
-            mLog.e(text3)
-            mLog.e(text4)
-            mLog.e(text5)
-            mLog.e(text6)
-            mLog.e(text7)
-            mLog.e(text8)
-            mLog.e(text9)
-            mLog.e(text10)
-            mLog.e(text11)
-            mLog.e(text12)
+            mLogd(text1)
+            mLogd(text2)
+            mLogd(text3)
+            mLogd(text4)
+            mLogd(text5)
+            mLogd(text6)
+            mLogd(text7)
+            mLogd(text8)
+            mLogd(text9)
+            mLogd(text10)
+            mLogd(text11)
+            mLogd(text12)
 
         }
 

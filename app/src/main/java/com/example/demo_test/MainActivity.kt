@@ -36,7 +36,8 @@ class MainActivity : AppCompatActivity() {
         "KotlinTest" to KotlinTestActivity::class.java,
         "VideoPlay" to VideoPlayActivity::class.java,
         "AActivity" to AActivity::class.java,
-        "ImageActivity" to ImageActivity::class.java
+        "ImageActivity" to ImageActivity::class.java,
+        "TransferTransparencyActivity" to TransferTransparencyActivity::class.java
     )
 
 
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<LinearLayout>(R.id.linearLayout).addView(button)
             button.setOnClickListener { it1 ->
                 startActivity(Intent(this@MainActivity, it.value))
-//                toActivity(Intent(this, TransferTransparencyActivity::class.java))
             }
         }
 

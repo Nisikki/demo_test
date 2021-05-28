@@ -1,18 +1,20 @@
 package com.example.demo_test
 
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
-import android.widget.EditText
+import androidx.lifecycle.lifecycleScope
+import com.example.demo_test.network.BaseResponse
+import com.example.demo_test.network.BasenNetWork
 import com.example.demo_test.utils.mLog
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.Job
+import com.example.demo_test.utils.mLogd
+import com.example.demo_test.utils.tryCatch
+import io.reactivex.Observer
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
+import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.launch
-import kotlin.coroutines.Continuation
+
 
 /**
  * @Author: Nisikki
@@ -26,19 +28,16 @@ class KotlinTestActivity : BaseActivity() {
     private lateinit var job: Job
 
 
-    private val test :String = ""
+    private val test: String = ""
 
 
     override fun setLayout() = R.layout.activity_test
 
     override fun init() {
-//        test()
+        getList()
 
     }
 
-    fun test1(){
-
-    }
 
     fun test() {
         job = GlobalScope.launch() {
@@ -61,4 +60,45 @@ class KotlinTestActivity : BaseActivity() {
 //            }
 //        })
     }
+
+
+    fun getList() {
+        lifecycleScope.launch {
+            tryCatch {
+
+                val data = withContext(Dispatchers.IO) {
+                    BasenNetWork.getInstance().apiRequest.getBannerByKotlin()
+                }
+                mLogd(data.toString())
+            }
+
+        }
+
+
+
+    }
+
+    fun rxjava(){
+        BasenNetWork.getInstance().apiRequest.getBanner()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : Observer<BaseResponse<String>> {
+                override fun onNext(t: BaseResponse<String>) {
+                    mLogd("onNext$t")
+                }
+
+                override fun onComplete() {
+                }
+
+                override fun onSubscribe(d: Disposable) {
+
+                }
+
+                override fun onError(e: Throwable) {
+                    mLogd("onError${e.message}")
+
+                }
+            })
+    }
+
 }

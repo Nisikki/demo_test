@@ -73,7 +73,8 @@
             android:theme="@style/TransparentStyle"/>
         <activity android:name=".image.ImageActivity" />
         <activity android:name=".image.ImageViewActivity" />
-
+        <activity android:name=".livedata.LiveDataAActivity" />
+        <activity android:name=".livedata.LiveDataBActivity" />
 
 
     </application>

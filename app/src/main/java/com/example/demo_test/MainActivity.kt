@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi
 import com.example.demo_test.dir.DirActivity
 import com.example.demo_test.image.ImageActivity
 import com.example.demo_test.keep_allive.ReceiveMsgService
+import com.example.demo_test.livedata.LiveDataAActivity
 import com.example.demo_test.skip.AActivity
 import com.example.demo_test.utils.toActivity
 import com.example.demo_test.video.VideoPlayActivity
@@ -37,7 +38,8 @@ class MainActivity : AppCompatActivity() {
         "VideoPlay" to VideoPlayActivity::class.java,
         "AActivity" to AActivity::class.java,
         "ImageActivity" to ImageActivity::class.java,
-        "TransferTransparencyActivity" to TransferTransparencyActivity::class.java
+        "TransferTransparencyActivity" to TransferTransparencyActivity::class.java,
+        "LiveDataAActivity" to LiveDataAActivity::class.java
     )
 
 

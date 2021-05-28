@@ -7,8 +7,6 @@ import androidx.lifecycle.ViewModel
  * @Date: 2021/5/8
  * @Describe:
  */
-class BaseViewModel:ViewModel(){
-    fun test(){
+open class BaseViewModel:ViewModel(){
 
-    }
 }

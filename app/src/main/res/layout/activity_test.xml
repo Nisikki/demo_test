@@ -5,46 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools">
-
-<!--    <TextView-->
-<!--        android:layout_gravity="center"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:visibility="gone"-->
-
-<!--        android:textSize="15dp"-->
-<!--        android:textColor="#000000"-->
-<!--        android:id="@+id/tv_title"/>-->
-
-
-<!--    <EditText-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:id="@+id/et_name"-->
-<!--        android:visibility="gone"-->
-<!--        android:layout_height="wrap_content"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/tv_describe"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:lines="2"-->
-<!--        android:ellipsize="end"-->
-<!--        android:textSize="13sp"-->
-<!--        android:text="官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景第三方第三方第三方地方adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl"-->
-<!--        />-->
-<!--    <TextView-->
-<!--        android:id="@+id/tv_describe11"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:lines="2"-->
-<!--        android:ellipsize="end"-->
-<!--        android:textSize="13sp"-->
-<!--        android:text="官方情感命理命理1的是非得失景adbkldfjl"-->
-<!--        />-->
     <TextView
-        android:id="@+id/tv_describe1"
+        android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -52,29 +14,18 @@
         android:ellipsize="end"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn"
         android:textSize="13sp"
         android:text="我需要构建自己的自定义TextView,所以我一直在学习StaticLayout在画布上绘制文本.这比直接使用Canvas.drawText()更好,或者documentation说.但是,文档没有给出任何示例.只有一个含糊的提及StaticLayout.Builder是更新的方式.我找到了一个例子here,但似乎有点过时了.我终于工作了,但是我在下面添加了我的解释"
         />
-<!--    <TextView-->
-<!--        android:id="@+id/tv_describe2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:lines="2"-->
-<!--        android:ellipsize="end"-->
-<!--        android:textSize="13sp"-->
-<!--        android:text="官方情感命理1234567890ABCDEFGHIJ0ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl"-->
-<!--        />-->
-<!--    <TextView-->
-<!--        android:id="@+id/tv_describe3"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:maxLines="2"-->
-<!--        android:ellipsize="end"-->
-<!--        android:textSize="13sp"-->
-<!--        android:text="官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl官方情感命理1234567890ABCDEFGHIJKkf控件东方丽景adbkldfjl"-->
-<!--        />-->
+
+    <Button
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:text="跳转"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

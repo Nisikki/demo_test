@@ -19,6 +19,14 @@ android {
         ndk {
             abiFilters "armeabi"
         }
+
+        packagingOptions {
+            //解决编译时com.android.builder.merge.DuplicateRelativeFileException: More than one file was found with OS independent path 'META-INF/rxjava.properties'这个错误
+            exclude 'META-INF/rxjava.properties'
+        }
+
+        //修复编译错误：The number of method references in a .dex file cannot exceed 64K.
+        multiDexEnabled true
     }
 
 
@@ -144,5 +152,6 @@ dependencies {
     api "com.jakewharton.rxbinding:rxbinding:$rxBindingVersion"
 
 
-
+    //修复编译错误：The number of method references in a .dex file cannot exceed 64K.
+    implementation 'com.android.support:multidex:1.0.3'
 }
